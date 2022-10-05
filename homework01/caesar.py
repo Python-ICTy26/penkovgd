@@ -1,5 +1,11 @@
 import typing as tp
 
+def shift_chr(c : int, shift : int) -> int:
+    if ord('a') <= c <= ord('z'):  # ord(a) = 97 ord(z) = 122
+        c = (c - 97 + shift) % 26 + 97
+    if ord('A') <= c <= ord('Z'):  # ord(A) = 97 ord(Z) = 122
+        c = (c - 65 + shift) % 26 + 65
+    return c
 
 def encrypt_caesar(plaintext: str, shift: int = 3) -> str:
     """
@@ -14,19 +20,12 @@ def encrypt_caesar(plaintext: str, shift: int = 3) -> str:
     >>> encrypt_caesar("")
     ''
     """
-    ciphertext = ""
     ord_array = [ord(c) for c in plaintext]
-    ord_array_encrypted = []
-    for c in ord_array:
-        if ord('a') <= c <= ord('z'):  # ord(a) = 97 ord(z) = 122
-            c = (c - 97 + shift) % 26 + 97
-        if ord('A') <= c <= ord('Z'):    # ord(A) = 97 ord(Z) = 122
-            c = (c - 65 + shift) % 26 + 65
-        ord_array_encrypted.append(c)
+    ord_array_encrypted = [shift_chr(c, shift) for c in ord_array]
     ciphertext = ''.join(chr(c) for c in ord_array_encrypted)
     return ciphertext
 
-
+print(-1 % 26)
 def decrypt_caesar(ciphertext: str, shift: int = 3) -> str:
     """
     Decrypts a ciphertext using a Caesar cipher.
@@ -40,15 +39,8 @@ def decrypt_caesar(ciphertext: str, shift: int = 3) -> str:
     >>> decrypt_caesar("")
     ''
     """
-    plaintext = ""
     ord_array_encrypted = [ord(c) for c in ciphertext]
-    ord_array_decrypted = []
-    for c in ord_array_encrypted:
-        if ord('a') <= c <= ord('z'):  # ord(a) = 97 ord(z) = 122
-            c = (c - 97 - shift) % 26 + 97
-        if ord('A') <= c <= ord('Z'):    # ord(A) = 97 ord(Z) = 122
-            c = (c - 65 - shift) % 26 + 65
-        ord_array_decrypted.append(c)
+    ord_array_decrypted = [shift_chr(c, -shift) for c in ord_array_encrypted]
     plaintext = ''.join(chr(c) for c in ord_array_decrypted)
     return plaintext
 
