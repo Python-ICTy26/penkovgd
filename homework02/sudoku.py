@@ -55,7 +55,7 @@ def get_row(grid: tp.List[tp.List[str]], pos: tp.Tuple[int, int]) -> tp.List[str
     >>> get_row([['1', '2', '3'], ['4', '5', '6'], ['.', '8', '9']], (2, 0))
     ['.', '8', '9']
     """
-    return grid[pos[0]] # pos[0] - row's number
+    return grid[pos[0]]  # pos[0] - row's number
 
 
 def get_col(grid: tp.List[tp.List[str]], pos: tp.Tuple[int, int]) -> tp.List[str]:
@@ -68,7 +68,7 @@ def get_col(grid: tp.List[tp.List[str]], pos: tp.Tuple[int, int]) -> tp.List[str
     >>> get_col([['1', '2', '3'], ['4', '5', '6'], ['.', '8', '9']], (0, 2))
     ['3', '6', '9']
     """
-    return [row[pos[1]] for row in grid]    # pos[1] - column's number
+    return [row[pos[1]] for row in grid]  # pos[1] - column's number
 
 
 def get_block(grid: tp.List[tp.List[str]], pos: tp.Tuple[int, int]) -> tp.List[str]:
@@ -85,6 +85,7 @@ def get_block(grid: tp.List[tp.List[str]], pos: tp.Tuple[int, int]) -> tp.List[s
     row, col = pos
     start_pos = (row - (row % 3), col - (col % 3))
     return [grid[i][j] for i in range(start_pos[0], start_pos[0] + 3) for j in range(start_pos[1], start_pos[1] + 3)]
+
 
 def find_empty_positions(grid: tp.List[tp.List[str]]) -> tp.Optional[tp.Tuple[int, int]]:
     """Найти первую свободную позицию в пазле
@@ -114,7 +115,11 @@ def find_possible_values(grid: tp.List[tp.List[str]], pos: tp.Tuple[int, int]) -
     >>> values == {'2', '5', '9'}
     True
     """
-    pass
+    values = {'1', '2', '3', '4', '5', '6', '7', '8', '9'}
+    values.difference_update(get_col(grid, pos))
+    values.difference_update(get_row(grid, pos))
+    values.difference_update(get_block(grid, pos))
+    return values
 
 
 def solve(grid: tp.List[tp.List[str]]) -> tp.Optional[tp.List[tp.List[str]]]:
