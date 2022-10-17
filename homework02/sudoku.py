@@ -1,7 +1,7 @@
-import pathlib
-import typing as tp
-import random
 import itertools
+import pathlib
+import random
+import typing as tp
 
 T = tp.TypeVar("T")
 
@@ -101,7 +101,7 @@ def find_empty_positions(grid: tp.List[tp.List[str]]) -> tp.Optional[tp.Tuple[in
     """
     for row in range(len(grid)):
         for col in range(len(grid[row])):
-            if grid[row][col] == '.':
+            if grid[row][col] == ".":
                 return row, col
     return None
 
@@ -117,7 +117,7 @@ def find_possible_values(grid: tp.List[tp.List[str]], pos: tp.Tuple[int, int]) -
     >>> values == {'2', '5', '9'}
     True
     """
-    values = {'1', '2', '3', '4', '5', '6', '7', '8', '9'}
+    values = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
     values.difference_update(get_col(grid, pos))
     values.difference_update(get_row(grid, pos))
     values.difference_update(get_block(grid, pos))
@@ -147,13 +147,13 @@ def solve(grid: tp.List[tp.List[str]]) -> tp.Optional[tp.List[tp.List[str]]]:
             result = solve(grid)
             if result:
                 return result
-            grid[empty_pos[0]][empty_pos[1]] = '.'
+            grid[empty_pos[0]][empty_pos[1]] = "."
 
 
 def check_solution(solution: tp.List[tp.List[str]]) -> bool:
     """ Если решение solution верно, то вернуть True, в противном случае False """
     # TODO: Add doctests with bad puzzles
-    values = {'1', '2', '3', '4', '5', '6', '7', '8', '9'}
+    values = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
     if find_empty_positions(solution):
         return False
     for i in range(len(solution)):
@@ -192,13 +192,13 @@ def generate_sudoku(N: int) -> tp.List[tp.List[str]]:
     if N > 81:
         N = 81
     num_of_empty_cells = 81 - N
-    empty_grid = ('.' * 9 + '\n') * 9
+    empty_grid = ("." * 9 + '\n') * 9
     empty_grid = create_grid(empty_grid)
     grid = solve(empty_grid)
-    set_of_all_pos = list(itertools.product(range(9), range(9)))
-    rand_positions = random.sample(set_of_all_pos, num_of_empty_cells)
+    list_of_all_pos = list(itertools.product(range(9), range(9)))
+    rand_positions = random.sample(list_of_all_pos, num_of_empty_cells)
     for pos in rand_positions:
-        grid[pos[0]][pos[1]] = '.'
+        grid[pos[0]][pos[1]] = "."
     return grid
 
 
