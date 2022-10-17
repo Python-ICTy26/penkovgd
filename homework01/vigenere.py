@@ -1,5 +1,6 @@
 import caesar
 
+
 def encrypt_vigenere(plaintext: str, keyword: str) -> str:
     """
     Encrypts plaintext using a Vigenere cipher.
@@ -22,6 +23,7 @@ def encrypt_vigenere(plaintext: str, keyword: str) -> str:
         c = caesar.shift_chr(c, shift)
         ciphertext += chr(c)
     return ciphertext
+
 
 def decrypt_vigenere(ciphertext: str, keyword: str) -> str:
     """

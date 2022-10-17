@@ -1,11 +1,13 @@
 import typing as tp
 
-def shift_chr(c : int, shift : int) -> int:
+
+def shift_chr(c: int, shift: int) -> int:
     if ord('a') <= c <= ord('z'):  # ord(a) = 97 ord(z) = 122
         c = (c - 97 + shift) % 26 + 97
     if ord('A') <= c <= ord('Z'):  # ord(A) = 97 ord(Z) = 122
         c = (c - 65 + shift) % 26 + 65
     return c
+
 
 def encrypt_caesar(plaintext: str, shift: int = 3) -> str:
     """
@@ -25,7 +27,10 @@ def encrypt_caesar(plaintext: str, shift: int = 3) -> str:
     ciphertext = ''.join(chr(c) for c in ord_array_encrypted)
     return ciphertext
 
+
 print(-1 % 26)
+
+
 def decrypt_caesar(ciphertext: str, shift: int = 3) -> str:
     """
     Decrypts a ciphertext using a Caesar cipher.
@@ -54,5 +59,5 @@ def caesar_breaker_brute_force(ciphertext: str, dictionary: tp.Set[str]) -> int:
         plaintext = decrypt_caesar(ciphertext, shift)
         if plaintext in dictionary:
             best_shift = shift
-    print('Слово %s расшифровывается как: %s' %(ciphertext, decrypt_caesar(ciphertext, best_shift)))
+    print('Слово %s расшифровывается как: %s' % (ciphertext, decrypt_caesar(ciphertext, best_shift)))
     return best_shift
