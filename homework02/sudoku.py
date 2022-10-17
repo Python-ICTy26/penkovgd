@@ -1,5 +1,7 @@
 import pathlib
 import typing as tp
+import random
+import itertools
 
 T = tp.TypeVar("T")
 
@@ -83,7 +85,7 @@ def get_block(grid: tp.List[tp.List[str]], pos: tp.Tuple[int, int]) -> tp.List[s
     ['2', '8', '.', '.', '.', '5', '.', '7', '9']
     """
     row, col = pos
-    start_pos = (row - (row % 3), col - (col % 3))
+    start_pos = row - (row % 3), col - (col % 3)
     return [grid[i][j] for i in range(start_pos[0], start_pos[0] + 3) for j in range(start_pos[1], start_pos[1] + 3)]
 
 
@@ -135,13 +137,34 @@ def solve(grid: tp.List[tp.List[str]]) -> tp.Optional[tp.List[tp.List[str]]]:
     >>> solve(grid)
     [['5', '3', '4', '6', '7', '8', '9', '1', '2'], ['6', '7', '2', '1', '9', '5', '3', '4', '8'], ['1', '9', '8', '3', '4', '2', '5', '6', '7'], ['8', '5', '9', '7', '6', '1', '4', '2', '3'], ['4', '2', '6', '8', '5', '3', '7', '9', '1'], ['7', '1', '3', '9', '2', '4', '8', '5', '6'], ['9', '6', '1', '5', '3', '7', '2', '8', '4'], ['2', '8', '7', '4', '1', '9', '6', '3', '5'], ['3', '4', '5', '2', '8', '6', '1', '7', '9']]
     """
-    pass
+    empty_pos = find_empty_positions(grid)
+    if empty_pos is None:
+        return grid
+    else:
+        possible_vals = find_possible_values(grid, empty_pos)
+        for val in possible_vals:
+            grid[empty_pos[0]][empty_pos[1]] = val
+            result = solve(grid)
+            if result:
+                return result
+            grid[empty_pos[0]][empty_pos[1]] = '.'
 
 
 def check_solution(solution: tp.List[tp.List[str]]) -> bool:
     """ Если решение solution верно, то вернуть True, в противном случае False """
     # TODO: Add doctests with bad puzzles
-    pass
+    values = {'1', '2', '3', '4', '5', '6', '7', '8', '9'}
+    if find_empty_positions(solution):
+        return False
+    for i in range(len(solution)):
+        row_pos = i, 0
+        col_pos = 0, i
+        block_pos = (i * 3) % 9, i - (i % 3)
+        if (set(get_row(solution, row_pos)) != values) \
+                or (set(get_col(solution, col_pos)) != values) \
+                or (set(get_block(solution, block_pos)) != values):
+            return False
+    return True
 
 
 def generate_sudoku(N: int) -> tp.List[tp.List[str]]:
@@ -166,15 +189,25 @@ def generate_sudoku(N: int) -> tp.List[tp.List[str]]:
     >>> check_solution(solution)
     True
     """
-    pass
+    if N > 81:
+        N = 81
+    num_of_empty_cells = 81 - N
+    empty_grid = ('.' * 9 + '\n') * 9
+    empty_grid = create_grid(empty_grid)
+    grid = solve(empty_grid)
+    set_of_all_pos = list(itertools.product(range(9), range(9)))
+    rand_positions = random.sample(set_of_all_pos, num_of_empty_cells)
+    for pos in rand_positions:
+        grid[pos[0]][pos[1]] = '.'
+    return grid
 
 
 if __name__ == "__main__":
     for fname in ["puzzle1.txt", "puzzle2.txt", "puzzle3.txt"]:
         grid = read_sudoku(fname)
         display(grid)
-        # solution = solve(grid)
-        # if not solution:
-        #     print(f"Puzzle {fname} can't be solved")
-        # else:
-        #     display(solution)
+        solution = solve(grid)
+        if not solution:
+            print(f"Puzzle {fname} can't be solved")
+        else:
+            display(solution)
