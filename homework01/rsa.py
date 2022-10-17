@@ -55,6 +55,7 @@ def multiplicative_inverse(e: int, phi: int) -> int:
     """
     if gcd(e, phi) != 1:
         print("Число %d не обратимо по модулю %d" % (e, phi))
+        return
     else:
         for x in range(phi):
             if (e * x) % phi == 1:
