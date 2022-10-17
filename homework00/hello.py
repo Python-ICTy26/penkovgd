@@ -1,5 +1,5 @@
 def get_greeting(name: str) -> str:
-    greeting = 'Hello, %s!' % name
+    greeting = "Hello, %s!" % name
     return greeting
 
 
