@@ -60,7 +60,6 @@ def caesar_breaker_brute_force(ciphertext: str, dictionary: tp.Set[str]) -> int:
         if plaintext in dictionary:
             best_shift = shift
     print(
-        "Слово %s расшифровывается как: %s" % (ciphertext,
-decrypt_caesar(ciphertext, best_shift))
+        "Слово %s расшифровывается как: %s" % (ciphertext, decrypt_caesar(ciphertext, best_shift))
     )
     return best_shift
