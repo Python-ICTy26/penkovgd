@@ -152,7 +152,7 @@ def solve(grid: tp.List[tp.List[str]]) -> tp.Optional[tp.List[tp.List[str]]]:
             if result:
                 return result
             grid[empty_pos[0]][empty_pos[1]] = "."
-    return grid
+    return None
 
 
 def check_solution(solution: tp.List[tp.List[str]]) -> bool:
@@ -221,4 +221,4 @@ if __name__ == "__main__":
             print(f"Puzzle {fname} can't be solved")
         else:
             display(solution)
-            generate_sudoku(10)
+            display(generate_sudoku(10))
