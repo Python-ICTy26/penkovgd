@@ -201,12 +201,12 @@ def generate_sudoku(N: int) -> tp.List[tp.List[str]]:
     num_of_empty_cells = 81 - N
     dots_9x9 = ("." * 9 + "\n") * 9
     empty_grid = create_grid(dots_9x9)
-    grid = solve(empty_grid)
+    grid = list(solve(empty_grid))
     list_of_all_pos = list(itertools.product(range(9), range(9)))
     rand_positions = random.sample(list_of_all_pos, num_of_empty_cells)
     for pos in rand_positions:
         grid[pos[0]][pos[1]] = "."
-    return list(grid)
+    return grid
 
 
 if __name__ == "__main__":
