@@ -201,7 +201,9 @@ def generate_sudoku(N: int) -> tp.List[tp.List[str]]:
     num_of_empty_cells = 81 - N
     dots_9x9 = ("." * 9 + "\n") * 9
     empty_grid = create_grid(dots_9x9)
-    grid = list(solve(empty_grid))
+    grid = solve(empty_grid)
+    if grid:
+        grid = list(grid)
     list_of_all_pos = list(itertools.product(range(9), range(9)))
     rand_positions = random.sample(list_of_all_pos, num_of_empty_cells)
     for pos in rand_positions:
@@ -218,3 +220,4 @@ if __name__ == "__main__":
             print(f"Puzzle {fname} can't be solved")
         else:
             display(solution)
+            generate_sudoku(10)
