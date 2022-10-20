@@ -128,7 +128,7 @@ def find_possible_values(grid: tp.List[tp.List[str]], pos: tp.Tuple[int, int]) -
     return values
 
 
-def solve(grid: tp.List[tp.List[str]]) -> tp.List[tp.List[str]]:
+def solve(grid: tp.List[tp.List[str]]) -> tp.Optional[tp.List[tp.List[str]]]:
     """Решение пазла, заданного в grid"""
     """ Как решать Судоку?
         1. Найти свободную позицию
@@ -152,8 +152,7 @@ def solve(grid: tp.List[tp.List[str]]) -> tp.List[tp.List[str]]:
             if result:
                 return result
             grid[empty_pos[0]][empty_pos[1]] = "."
-    return grid
-
+    return None
 
 def check_solution(solution: tp.List[tp.List[str]]) -> bool:
     """Если решение solution верно, то вернуть True, в противном случае False"""
@@ -202,11 +201,13 @@ def generate_sudoku(N: int) -> tp.List[tp.List[str]]:
     dots_9x9 = ("." * 9 + "\n") * 9
     empty_grid = create_grid(dots_9x9)
     grid = solve(empty_grid)
-    list_of_all_pos = list(itertools.product(range(9), range(9)))
-    rand_positions = random.sample(list_of_all_pos, num_of_empty_cells)
-    for pos in rand_positions:
-        grid[pos[0]][pos[1]] = "."
-    return grid
+    if grid is not None:
+        list_of_all_pos = list(itertools.product(range(9), range(9)))
+        rand_positions = random.sample(list_of_all_pos, num_of_empty_cells)
+        for pos in rand_positions:
+            grid[pos[0]][pos[1]] = "."
+        return grid
+    return []
 
 
 if __name__ == "__main__":
