@@ -122,13 +122,13 @@ def find_possible_values(grid: tp.List[tp.List[str]], pos: tp.Tuple[int, int]) -
     True
     """
     values = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
-    values.difference_update(get_col(grid, pos))
-    values.difference_update(get_row(grid, pos))
-    values.difference_update(get_block(grid, pos))
+    values -= set(get_col(grid, pos))
+    values -= set(get_row(grid, pos))
+    values -= set(get_block(grid, pos))
     return values
 
 
-def solve(grid: tp.List[tp.List[str]]) -> tp.Optional[tp.List[tp.List[str]]]:
+def solve(grid: tp.List[tp.List[str]]) -> tp.List[tp.List[str]]:
     """Решение пазла, заданного в grid"""
     """ Как решать Судоку?
         1. Найти свободную позицию
@@ -152,7 +152,6 @@ def solve(grid: tp.List[tp.List[str]]) -> tp.Optional[tp.List[tp.List[str]]]:
             if result:
                 return result
             grid[empty_pos[0]][empty_pos[1]] = "."
-    return None
 
 
 def check_solution(solution: tp.List[tp.List[str]]) -> bool:
@@ -202,9 +201,6 @@ def generate_sudoku(N: int) -> tp.List[tp.List[str]]:
     dots_9x9 = ("." * 9 + "\n") * 9
     empty_grid = create_grid(dots_9x9)
     grid = solve(empty_grid)
-    while not grid:
-        grid = solve(empty_grid)
-    grid = list(grid)
     list_of_all_pos = list(itertools.product(range(9), range(9)))
     rand_positions = random.sample(list_of_all_pos, num_of_empty_cells)
     for pos in rand_positions:
