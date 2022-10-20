@@ -152,7 +152,7 @@ def solve(grid: tp.List[tp.List[str]]) -> tp.List[tp.List[str]]:
             if result:
                 return result
             grid[empty_pos[0]][empty_pos[1]] = "."
-    return
+    return grid
 
 
 def check_solution(solution: tp.List[tp.List[str]]) -> bool:
