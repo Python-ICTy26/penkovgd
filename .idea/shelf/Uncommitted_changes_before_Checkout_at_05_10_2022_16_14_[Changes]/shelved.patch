@@ -1,0 +1,29 @@
+Index: homework01/caesar.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/homework01/caesar.py b/homework01/caesar.py
+--- a/homework01/caesar.py	
++++ b/homework01/caesar.py	
+@@ -18,9 +18,9 @@
+     ord_array = [ord(c) for c in plaintext]
+     ord_array_encrypted = []
+     for c in ord_array:
+-        if ord('a') <= c <= ord('z'):  # ord(a) = 97 ord(z) = 122
++        if ord('a') <= c <= ord('z'):   # ord(a) = 97 ord(z) = 122
+             c = (c - 97 + shift) % 26 + 97
+-        if ord('A') <= c <= ord('Z'):    # ord(A) = 97 ord(Z) = 122
++        if ord('A') <= c <= ord('Z'):    # ord(A) = 65 ord(Z) = 90
+             c = (c - 65 + shift) % 26 + 65
+         ord_array_encrypted.append(c)
+     ciphertext = ''.join(chr(c) for c in ord_array_encrypted)
+@@ -46,7 +46,7 @@
+     for c in ord_array_encrypted:
+         if ord('a') <= c <= ord('z'):  # ord(a) = 97 ord(z) = 122
+             c = (c - 97 - shift) % 26 + 97
+-        if ord('A') <= c <= ord('Z'):    # ord(A) = 97 ord(Z) = 122
++        if ord('A') <= c <= ord('Z'):    # ord(A) = 65 ord(Z) = 90
+             c = (c - 65 - shift) % 26 + 65
+         ord_array_decrypted.append(c)
+     plaintext = ''.join(chr(c) for c in ord_array_decrypted)
