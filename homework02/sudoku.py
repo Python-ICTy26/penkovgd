@@ -141,6 +141,77 @@ def solve(grid: tp.List[tp.List[str]]) -> tp.Optional[tp.List[tp.List[str]]]:
     >>> solve(grid)
     [['5', '3', '4', '6', '7', '8', '9', '1', '2'], ['6', '7', '2', '1', '9', '5', '3', '4', '8'], ['1', '9', '8', '3', '4', '2', '5', '6', '7'], ['8', '5', '9', '7', '6', '1', '4', '2', '3'], ['4', '2', '6', '8', '5', '3', '7', '9', '1'], ['7', '1', '3', '9', '2', '4', '8', '5', '6'], ['9', '6', '1', '5', '3', '7', '2', '8', '4'], ['2', '8', '7', '4', '1', '9', '6', '3', '5'], ['3', '4', '5', '2', '8', '6', '1', '7', '9']]
     """
+    # for _ in range(10000):
+    #     for block_num in range(9):
+    #         block_pos = (block_num * 3) % 9, block_num - (block_num % 3)
+    #         block = get_block(grid, block_pos)
+    #         block = group(block, 3)
+    #         for val in range(1, 10):
+    #             good_cell_qty = 0
+    #             for i, j in itertools.product(range(3), range(3)):
+    #                 if block[i][j] == '.':
+    #                     pos_vals = find_possible_values(grid, (block_pos[0] + i, block_pos[1] + j))
+    #                     if str(val) in pos_vals:
+    #                         if good_cell_qty > 1:
+    #                             break
+    #                         good_cell_qty += 1
+    #                         good_cell_pos = block_pos[0] + i, block_pos[1] + j
+    #             if good_cell_qty == 1:
+    #                 grid[good_cell_pos[0]][good_cell_pos[1]] = str(val)
+    #                 finish_it(grid, good_cell_pos)
+    #     if not find_empty_positions(grid):
+    #         break
+    # if find_empty_positions(grid):
+    #     return None
+    # else:
+    #     return grid
+    poses = set()
+    for i, j in itertools.product(range(len(grid)), range(len(grid))):
+        if grid[i][j] == '.':
+            grid[i][j] = str(random.randint(1, 9))
+            poses.add((i, j))
+    mistakes_pos = find_mistakes(grid, poses)
+    while len(mistakes_pos) != 0:
+        for pos in mistakes_pos:
+            grid[pos[0]][pos[1]] = str(random.randint(1, 9))
+        mistakes_pos = find_mistakes(grid, mistakes_pos)
+        display(grid)
+        input()
+    return grid
+
+
+def find_mistakes(grid, poses):
+    mistakes_pos = set()
+    for i, j in poses:
+        pos = i, j
+        row = get_row(grid, pos)
+        col = get_col(grid, pos)
+        block = get_block(grid, pos)
+        if row.count(grid[i][j]) > 1 or col.count(grid[i][j]) > 1 or block.count(grid[i][j]) > 1:
+            mistakes_pos.add(pos)
+    return mistakes_pos
+
+
+def finish_it(grid, pos):
+    row = get_row(grid, pos)
+    col = get_col(grid, pos)
+    block = get_block(grid, pos)
+    block = group(block, 3)
+    if row.count('.') == 1:
+        pos_to_finish = pos[0], row.index('.')
+        grid[pos_to_finish[0]][pos_to_finish[1]] = find_possible_values(grid, pos_to_finish).pop()
+        finish_it(grid, pos_to_finish)
+    elif col.count('.') == 1:
+        pos_to_finish = col.index('.'), pos[1]
+        grid[pos_to_finish[0]][pos_to_finish[1]] = find_possible_values(grid, pos_to_finish).pop()
+        finish_it(grid, pos_to_finish)
+    elif [row.count('.') for row in block] == 1:
+        pos_to_finish = find_empty_positions(block)
+        grid[pos_to_finish[0]][pos_to_finish[1]] = find_possible_values(grid, pos_to_finish).pop()
+        finish_it(grid, pos_to_finish)
+
+
+def solve_recursion(grid: tp.List[tp.List[str]]) -> tp.Optional[tp.List[tp.List[str]]]:
     empty_pos = find_empty_positions(grid)
     if empty_pos is None:
         return grid
@@ -148,7 +219,7 @@ def solve(grid: tp.List[tp.List[str]]) -> tp.Optional[tp.List[tp.List[str]]]:
         possible_vals = find_possible_values(grid, empty_pos)
         for val in possible_vals:
             grid[empty_pos[0]][empty_pos[1]] = val
-            result = solve(grid)
+            result = solve_recursion(grid)
             if result:
                 return result
             grid[empty_pos[0]][empty_pos[1]] = "."
@@ -201,7 +272,7 @@ def generate_sudoku(N: int) -> tp.List[tp.List[str]]:
     num_of_empty_cells = 81 - N
     dots_9x9 = ("." * 9 + "\n") * 9
     empty_grid = create_grid(dots_9x9)
-    grid = solve(empty_grid)
+    grid = solve_recursion(empty_grid)
     if grid is not None:
         list_of_all_pos = list(itertools.product(range(9), range(9)))
         rand_positions = random.sample(list_of_all_pos, num_of_empty_cells)
@@ -220,4 +291,3 @@ if __name__ == "__main__":
             print(f"Puzzle {fname} can't be solved")
         else:
             display(solution)
-            display(generate_sudoku(10))

@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bc5851de-b514-4e3c-9c07-de546559a9b5" name="Changes" comment="black">
+      <change beforePath="$PROJECT_DIR$/homework02/sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework02/sudoku.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework02/test_sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework02/test_sudoku.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework03/life.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework03/life.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework03/life_proto.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework03/life_proto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework03/tests/test_life.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework03/tests/test_life.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework03/tests/test_life_proto.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework03/tests/test_life_proto.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="homework02" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/homework02/sudoku.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2EyfqsDG1d4c4V7N1ydPZPtmqmm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/PyCharm Projects/penkovgd&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Python.life">
+    <configuration name="life" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="penkovgd" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/homework03" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/homework03/life.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="life_proto" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="penkovgd" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/homework03" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/homework03/life_proto.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="python -m unittest discover" type="PythonConfigurationType" factoryName="Python">
+      <module name="penkovgd" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\PyCharm Projects\penkovgd\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/homework03" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="unittest" />
+      <option name="PARAMETERS" value="discover" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="true" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_life.TestGameOfLife" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="penkovgd" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/homework03/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_life.TestGameOfLife&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_life.TestGameOfLife.test_is_max_generations_exceeded" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="penkovgd" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/homework03/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_life.TestGameOfLife.test_is_max_generations_exceeded&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_life.TestGameOfLife.test_is_not_changing" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="penkovgd" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/homework03/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_life.TestGameOfLife.test_is_not_changing&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.life" />
+        <item itemvalue="Python tests.Python tests for test_life.TestGameOfLife" />
+        <item itemvalue="Python.life_proto" />
+        <item itemvalue="Python tests.Python tests for test_life.TestGameOfLife.test_is_max_generations_exceeded" />
+        <item itemvalue="Python tests.Python tests for test_life.TestGameOfLife.test_is_not_changing" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bc5851de-b514-4e3c-9c07-de546559a9b5" name="Changes" comment="" />
+      <created>1663572939267</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1663572939267</updated>
+      <workItem from="1663572941662" duration="1738000" />
+      <workItem from="1663576112776" duration="324000" />
+      <workItem from="1663576454581" duration="612000" />
+      <workItem from="1663577093689" duration="241000" />
+      <workItem from="1663577351125" duration="4011000" />
+      <workItem from="1664298111934" duration="26000" />
+      <workItem from="1664475792232" duration="7110000" />
+      <workItem from="1664545357211" duration="13369000" />
+      <workItem from="1664774690551" duration="1306000" />
+      <workItem from="1664793589070" duration="11000" />
+      <workItem from="1664974610285" duration="2258000" />
+      <workItem from="1665082148623" duration="3000" />
+      <workItem from="1665141553889" duration="15000" />
+      <workItem from="1665306217882" duration="217000" />
+      <workItem from="1665909770830" duration="1155000" />
+      <workItem from="1665944428714" duration="6619000" />
+      <workItem from="1665989598511" duration="4124000" />
+      <workItem from="1666007556809" duration="15951000" />
+      <workItem from="1666037809498" duration="803000" />
+      <workItem from="1666077897815" duration="1778000" />
+      <workItem from="1666082248279" duration="33000" />
+      <workItem from="1666181061973" duration="1141000" />
+      <workItem from="1666182238052" duration="519000" />
+      <workItem from="1666264579609" duration="1721000" />
+      <workItem from="1666361626981" duration="322000" />
+      <workItem from="1666543316732" duration="3390000" />
+      <workItem from="1666580463887" duration="2826000" />
+      <workItem from="1666604440749" duration="18868000" />
+      <workItem from="1666687016870" duration="5031000" />
+      <workItem from="1666721831156" duration="3899000" />
+      <workItem from="1666765887544" duration="169000" />
+      <workItem from="1666777370043" duration="15000" />
+      <workItem from="1666785438062" duration="792000" />
+      <workItem from="1666806932158" duration="3446000" />
+    </task>
+    <task id="LOCAL-00001" summary="решена лр-0">
+      <created>1663687749639</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1663687749639</updated>
+    </task>
+    <task id="LOCAL-00002" summary="mypy problem">
+      <created>1663688244686</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663688244686</updated>
+    </task>
+    <task id="LOCAL-00003" summary="black">
+      <created>1666035875642</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1666035875642</updated>
+    </task>
+    <task id="LOCAL-00004" summary="isort">
+      <created>1666036173612</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1666036173612</updated>
+    </task>
+    <task id="LOCAL-00005" summary="black">
+      <created>1666036473594</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666036473594</updated>
+    </task>
+    <task id="LOCAL-00006" summary="black1">
+      <created>1666036583396</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666036583396</updated>
+    </task>
+    <task id="LOCAL-00007" summary="black2">
+      <created>1666036681208</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1666036681208</updated>
+    </task>
+    <task id="LOCAL-00008" summary="black3">
+      <created>1666036808902</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1666036808902</updated>
+    </task>
+    <task id="LOCAL-00009" summary="mypy">
+      <created>1666036899755</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1666036899755</updated>
+    </task>
+    <task id="LOCAL-00010" summary="mypy1">
+      <created>1666037126216</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1666037126216</updated>
+    </task>
+    <task id="LOCAL-00011" summary="mypy2">
+      <created>1666037221413</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1666037221413</updated>
+    </task>
+    <task id="LOCAL-00012" summary="mypy3">
+      <created>1666037363344</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1666037363344</updated>
+    </task>
+    <task id="LOCAL-00013" summary="полировка">
+      <created>1666037839699</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1666037839699</updated>
+    </task>
+    <task id="LOCAL-00014" summary="black">
+      <created>1666038164150</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1666038164150</updated>
+    </task>
+    <task id="LOCAL-00015" summary="mypy">
+      <created>1666038453703</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1666038453703</updated>
+    </task>
+    <task id="LOCAL-00016" summary="black1">
+      <created>1666038549976</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1666038549976</updated>
+    </task>
+    <task id="LOCAL-00017" summary="mypy1">
+      <created>1666078056339</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1666078056339</updated>
+    </task>
+    <task id="LOCAL-00018" summary="mypy2">
+      <created>1666078653013</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1666078653013</updated>
+    </task>
+    <task id="LOCAL-00019" summary="mypy3">
+      <created>1666078913889</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1666078913889</updated>
+    </task>
+    <task id="LOCAL-00020" summary="unittests">
+      <created>1666079677928</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1666079677928</updated>
+    </task>
+    <task id="LOCAL-00021" summary="красота кода">
+      <created>1666265143829</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1666265143829</updated>
+    </task>
+    <task id="LOCAL-00022" summary="mypy">
+      <created>1666265237846</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1666265237846</updated>
+    </task>
+    <task id="LOCAL-00023" summary="black">
+      <created>1666265260150</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1666265260150</updated>
+    </task>
+    <task id="LOCAL-00024" summary="mypy">
+      <created>1666265327954</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1666265327954</updated>
+    </task>
+    <task id="LOCAL-00025" summary="mypy">
+      <created>1666265735545</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1666265735545</updated>
+    </task>
+    <task id="LOCAL-00026" summary="black">
+      <created>1666265822205</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1666265822205</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="решена лр-0" />
+    <MESSAGE value="mypy problem" />
+    <MESSAGE value="isort" />
+    <MESSAGE value="black2" />
+    <MESSAGE value="black3" />
+    <MESSAGE value="полировка" />
+    <MESSAGE value="black1" />
+    <MESSAGE value="mypy1" />
+    <MESSAGE value="mypy2" />
+    <MESSAGE value="mypy3" />
+    <MESSAGE value="unittests" />
+    <MESSAGE value="красота кода" />
+    <MESSAGE value="mypy" />
+    <MESSAGE value="black" />
+    <option name="LAST_COMMIT_MESSAGE" value="black" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/homework02/test_sudoku.py</url>
+          <line>223</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="tests">
+        <watch expression="solution[7]" language="Python" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/penkovgd$Doctests_in_sudoku__4_.coverage" NAME="Doctests in sudoku (4) Coverage Results" MODIFIED="1665951434132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework02" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctests_in_rsa.coverage" NAME="Doctests in rsa Coverage Results" MODIFIED="1664734070815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework01" />
+    <SUITE FILE_PATH="coverage/penkovgd$life_proto.coverage" NAME="life_proto Coverage Results" MODIFIED="1666808415196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework03" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctest_group.coverage" NAME="Doctest group Coverage Results" MODIFIED="1665945540718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework02" />
+    <SUITE FILE_PATH="coverage/penkovgd$rsa.coverage" NAME="rsa Coverage Results" MODIFIED="1664734433908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework01" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctests_in_sudoku__2_.coverage" NAME="Doctests in sudoku (2) Coverage Results" MODIFIED="1666607380640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework02" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctest_multiplicative_inverse.coverage" NAME="Doctest multiplicative_inverse Coverage Results" MODIFIED="1664734171719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework01" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctest_is_prime.coverage" NAME="Doctest is_prime Coverage Results" MODIFIED="1664701018495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework01" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctest_generate_sudoku.coverage" NAME="Doctest generate_sudoku Coverage Results" MODIFIED="1666028401855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework02" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctests_in_rsa__1_.coverage" NAME="Doctests in rsa (1) Coverage Results" MODIFIED="1664732766254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework01" />
+    <SUITE FILE_PATH="coverage/penkovgd$.coverage" NAME=" Coverage Results" MODIFIED="1666808451669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework03/tests" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctest_encrypt_vigenere__1_.coverage" NAME="Doctest encrypt_vigenere (1) Coverage Results" MODIFIED="1664547612552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework01" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctest_encrypt_caesar.coverage" NAME="Doctest encrypt_caesar Coverage Results" MODIFIED="1664482241472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework01" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctests_in_sudoku__5_.coverage" NAME="Doctests in sudoku (5) Coverage Results" MODIFIED="1665951448854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework02" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctests_in_sudoku.coverage" NAME="Doctests in sudoku Coverage Results" MODIFIED="1666635885500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework02" />
+    <SUITE FILE_PATH="coverage/penkovgd$life.coverage" NAME="life Coverage Results" MODIFIED="1666810394434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework03" />
+    <SUITE FILE_PATH="coverage/penkovgd$python__m_unittest_discover.coverage" NAME="python -m unittest discover Coverage Results" MODIFIED="1666687847002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework03" />
+    <SUITE FILE_PATH="coverage/penkovgd$hello.coverage" NAME="hello Coverage Results" MODIFIED="1663687312695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework00" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctests_in_sudoku__3_.coverage" NAME="Doctests in sudoku (3) Coverage Results" MODIFIED="1666007586547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework02" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctest_encrypt_vigenere.coverage" NAME="Doctest encrypt_vigenere Coverage Results" MODIFIED="1664549958769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework01" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctests_in_caesar.coverage" NAME="Doctests in caesar Coverage Results" MODIFIED="1664976551730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework01" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctests_in_sudoku__1_.coverage" NAME="Doctests in sudoku (1) Coverage Results" MODIFIED="1666544875784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework02" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctest_encrypt_vigenere__3_.coverage" NAME="Doctest encrypt_vigenere (3) Coverage Results" MODIFIED="1664565138822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework01" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctest_encrypt_vigenere__2_.coverage" NAME="Doctest encrypt_vigenere (2) Coverage Results" MODIFIED="1664547806469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework01" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctest_decrypt_vigenere.coverage" NAME="Doctest decrypt_vigenere Coverage Results" MODIFIED="1664565316423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework01" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctests_in_vigenere.coverage" NAME="Doctests in vigenere Coverage Results" MODIFIED="1664565410281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework01" />
+    <SUITE FILE_PATH="coverage/penkovgd$sudoku.coverage" NAME="sudoku Coverage Results" MODIFIED="1666646008920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework02" />
+    <SUITE FILE_PATH="coverage/penkovgd$Doctest_gcd.coverage" NAME="Doctest gcd Coverage Results" MODIFIED="1664730353144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homework01" />
+  </component>
+</project>

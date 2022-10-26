@@ -221,7 +221,7 @@ class SudokuTestCase(unittest.TestCase):
         expected_unknown = 41
         actual_unknown = sum(1 for row in grid for e in row if e == ".")
         self.assertEqual(expected_unknown, actual_unknown)
-        solution = sudoku.solve(grid)
+        solution = sudoku.solve_recursion(grid)
         solved = sudoku.check_solution(solution)
         self.assertTrue(solved)
 
@@ -229,7 +229,7 @@ class SudokuTestCase(unittest.TestCase):
         expected_unknown = 0
         actual_unknown = sum(1 for row in grid for e in row if e == ".")
         self.assertEqual(expected_unknown, actual_unknown)
-        solution = sudoku.solve(grid)
+        solution = sudoku.solve_recursion(grid)
         solved = sudoku.check_solution(solution)
         self.assertTrue(solved)
 
@@ -237,6 +237,6 @@ class SudokuTestCase(unittest.TestCase):
         expected_unknown = 81
         actual_unknown = sum(1 for row in grid for e in row if e == ".")
         self.assertEqual(expected_unknown, actual_unknown)
-        solution = sudoku.solve(grid)
+        solution = sudoku.solve_recursion(grid)
         solved = sudoku.check_solution(solution)
         self.assertTrue(solved)
