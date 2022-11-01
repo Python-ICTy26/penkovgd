@@ -52,7 +52,7 @@ class GUI(UI):
                     self.life.toggle_cell(mx, my)
             self.draw_grid()
             self.draw_lines()
-            self.life.step()
+            self.life.run_one_step()
             pygame.display.flip()
             clock.tick(self.speed)
         pygame.quit()

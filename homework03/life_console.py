@@ -30,7 +30,7 @@ class Console(UI):
         self.draw_borders(screen)
         self.draw_grid(screen)
         while True:
-            self.life.step()
+            self.life.run_one_step()
             curses.napms(300)
             self.draw_grid(screen)
             screen.nodelay(True)
@@ -40,7 +40,7 @@ class Console(UI):
             elif event == ord("q"):
                 break
             elif event == curses.KEY_MOUSE:
-                _, mx, my, _, bstate = curses.getmouse()
+                _, mx, my, _, _ = curses.getmouse()
                 self.life.toggle_cell(mx - 1, my - 1)
             screen.refresh()
 
