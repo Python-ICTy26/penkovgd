@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc5851de-b514-4e3c-9c07-de546559a9b5" name="Changes" comment="upd2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="bc5851de-b514-4e3c-9c07-de546559a9b5" name="Changes" comment="lab3" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +17,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/homework02/sudoku.py" root0="FORCE_HIGHLIGHTING" />
@@ -227,6 +226,7 @@
       <workItem from="1667222003298" duration="82000" />
       <workItem from="1667306411381" duration="3578000" />
       <workItem from="1667319215121" duration="242000" />
+      <workItem from="1667319461107" duration="479000" />
     </task>
     <task id="LOCAL-00001" summary="решена лр-0">
       <created>1663687749639</created>
@@ -473,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667314001871</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="lab3">
+      <created>1667319594327</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1667319594327</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +523,8 @@
     <MESSAGE value="upd" />
     <MESSAGE value="upd1" />
     <MESSAGE value="upd2" />
-    <option name="LAST_COMMIT_MESSAGE" value="upd2" />
+    <MESSAGE value="lab3" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
