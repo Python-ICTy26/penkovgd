@@ -3,12 +3,13 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/homework01/.pytest_cache/v" />
+      <excludeFolder url="file://$MODULE_DIR$/homework01/.mypy_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/homework02/.mypy_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/homework03/.pytest_cache/v" />
+      <excludeFolder url="file://$MODULE_DIR$/homework03/tests/.pytest_cache/v" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.10 (penkovgd)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-  </component>
-  <component name="PyDocumentationSettings">
-    <option name="format" value="PLAIN" />
-    <option name="myDocStringFormat" value="Plain" />
   </component>
 </module>
