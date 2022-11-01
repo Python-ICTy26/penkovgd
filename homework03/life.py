@@ -28,7 +28,7 @@ class GameOfLife:
         self.max_generations = max_generations
         # Текущее число поколений
         self.generations = 1
-
+        self.is_on_pause = True
     def create_grid(self, randomize: bool = False) -> Grid:
         if randomize:
             return [[random.randint(0, 1) for _ in range(self.cols)] for _ in range(self.rows)]
@@ -87,9 +87,11 @@ class GameOfLife:
         """
         Выполнить один шаг игры.
         """
-        self.prev_generation = self.curr_generation
-        self.curr_generation = self.get_next_generation()
-
+        if self.is_changing and not self.is_max_generations_exceeded and not self.is_on_pause:
+            self.prev_generation = self.curr_generation
+            self.curr_generation = self.get_next_generation()
+    def pause(self) -> None:
+        self.is_on_pause = not self.is_on_pause
 
 
     @property
@@ -107,7 +109,7 @@ class GameOfLife:
         return self.get_next_generation() != self.curr_generation
 
     @staticmethod
-    def from_file(filename: pathlib.Path) -> "GameOfLife":
+    def from_file(filename) -> "GameOfLife":
         """
         Прочитать состояние клеток из указанного файла.
         """
@@ -132,10 +134,17 @@ class GameOfLife:
                 str_to_save += "\n"
             f.write(str_to_save)
 
+    def toggle_cell(self, x, y) -> None:
+        cell = self.curr_generation[y][x]
+        if cell == 1:
+            self.curr_generation[y][x] = 0
+        else:
+            self.curr_generation[y][x] = 1
+
 
 if __name__ == "__main__":
-    game = GameOfLife.from_file(pathlib.Path("grid.txt"))
+    game = GameOfLife.from_file("grid.txt")
     print(game.curr_generation)
     game.step()
     print(game.curr_generation)
-    game.save(pathlib.Path("save.txt"))
+    game.save("save.txt")
