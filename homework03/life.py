@@ -3,9 +3,6 @@ import pathlib
 import random
 import typing as tp
 
-import pygame
-from pygame.locals import *
-
 Cell = tp.Tuple[int, int]
 Cells = tp.List[int]
 Grid = tp.List[Cells]
@@ -28,7 +25,9 @@ class GameOfLife:
         self.max_generations = max_generations
         # Текущее число поколений
         self.generations = 1
+        # Находится ли игра на паузе
         self.is_on_pause = True
+
     def create_grid(self, randomize: bool = False) -> Grid:
         if randomize:
             return [[random.randint(0, 1) for _ in range(self.cols)] for _ in range(self.rows)]
@@ -87,12 +86,11 @@ class GameOfLife:
         """
         Выполнить один шаг игры.
         """
-        if self.is_changing and not self.is_max_generations_exceeded and not self.is_on_pause:
-            self.prev_generation = self.curr_generation
-            self.curr_generation = self.get_next_generation()
+        self.prev_generation = self.curr_generation
+        self.curr_generation = self.get_next_generation()
+
     def pause(self) -> None:
         self.is_on_pause = not self.is_on_pause
-
 
     @property
     def is_max_generations_exceeded(self) -> bool:
@@ -117,7 +115,6 @@ class GameOfLife:
         with open(filename, mode="r") as f:
             for line in f.readlines():
                 new_grid.append([int(cell) for cell in line[:-1]])
-
         game = GameOfLife((len(new_grid), len(new_grid[0])))
         game.curr_generation = new_grid
         return game
@@ -140,6 +137,12 @@ class GameOfLife:
             self.curr_generation[y][x] = 0
         else:
             self.curr_generation[y][x] = 1
+    def run_one_step(self):
+        if self.is_changing \
+                and not self.is_max_generations_exceeded\
+                and not self.is_on_pause:
+            self.step()
+
 
 
 if __name__ == "__main__":

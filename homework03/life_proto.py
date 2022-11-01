@@ -31,7 +31,7 @@ class GameOfLife:
         self.speed = speed
 
         # Изначальная сетка
-        self.grid = self.create_grid(True)
+        self.grid = self.create_grid(randomize=True)
 
     def draw_lines(self) -> None:
         """ Отрисовать сетку """
