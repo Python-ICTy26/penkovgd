@@ -23,7 +23,7 @@ class GameOfLife:
         self.curr_generation = self.create_grid(randomize=randomize)
         # Максимальное число поколений
         self.max_generations = max_generations
-        # Текущее число поколений
+        # Текущее число поколени
         self.generations = 1
         # Находится ли игра на паузе
         self.is_on_pause = True
