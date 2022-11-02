@@ -156,7 +156,6 @@ class GameOfLife:
         neighbours = [self.grid[i[0]][i[1]] for i in np]
         return neighbours
 
-
     def get_next_generation(self) -> Grid:
         """
         Получить следующее поколение клеток.
@@ -178,6 +177,7 @@ class GameOfLife:
                     if neighbours.count(1) == 3:
                         next_grid[i][j] = 1
         return next_grid
+
 
 if __name__ == "__main__":
     game = GameOfLife()

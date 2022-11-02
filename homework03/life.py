@@ -135,10 +135,10 @@ class GameOfLife:
             self.curr_generation[y][x] = 0
         else:
             self.curr_generation[y][x] = 1
+
     def run_one_step(self):
         if self.is_changing and not self.is_max_generations_exceeded and not self.is_on_pause:
             self.step()
-
 
 
 if __name__ == "__main__":

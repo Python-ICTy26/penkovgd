@@ -45,12 +45,12 @@ class GUI(UI):
         running = True
         while running:
             for event in pygame.event.get():
-                if event.type == QUIT:
+                if event.type == pygame.QUIT:
                     running = False
-                if event.type == KEYDOWN:
-                    if event.key == K_SPACE:
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_SPACE:
                         self.life.pause()
-                if event.type == MOUSEBUTTONDOWN:
+                if event.type == pygame.MOUSEBUTTONDOWN:
                     mx, my = pygame.mouse.get_pos()
                     mx, my = mx // self.cell_size, my // self.cell_size
                     self.life.toggle_cell(mx, my)
