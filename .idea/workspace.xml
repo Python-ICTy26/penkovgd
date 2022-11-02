@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc5851de-b514-4e3c-9c07-de546559a9b5" name="Changes" comment="upd" />
+    <list default="true" id="bc5851de-b514-4e3c-9c07-de546559a9b5" name="Changes" comment="tester upd" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -607,7 +607,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667393225598</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="tester upd">
+      <created>1667393602924</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1667393602924</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -652,7 +659,8 @@
     <MESSAGE value="lab3" />
     <MESSAGE value="idea upd" />
     <MESSAGE value="upd" />
-    <option name="LAST_COMMIT_MESSAGE" value="upd" />
+    <MESSAGE value="tester upd" />
+    <option name="LAST_COMMIT_MESSAGE" value="tester upd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
