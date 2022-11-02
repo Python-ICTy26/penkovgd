@@ -95,7 +95,9 @@ class GameOfLife:
         """
         Не превысило ли текущее число поколений максимально допустимое.
         """
-        return self.generations >= self.max_generations
+        if self.max_generations:
+            return self.generations >= self.max_generations
+        return False
 
     @property
     def is_changing(self) -> bool:
@@ -117,7 +119,7 @@ class GameOfLife:
         game.curr_generation = new_grid
         return game
 
-    def save(self, filename: pathlib.Path) -> None:
+    def save(self, filename) -> None:
         """
         Сохранить текущее состояние клеток в указанный файл.
         """
