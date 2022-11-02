@@ -98,13 +98,13 @@ class GameOfLife:
                 if self.grid[i][j] == 0:
                     pygame.draw.rect(
                         self.screen,
-                        pygame.Color('white'),
+                        pygame.Color("white"),
                         (j * self.cell_size, i * self.cell_size, self.cell_size, self.cell_size),
                     )
                 else:
                     pygame.draw.rect(
                         self.screen,
-                        pygame.Color('green'),
+                        pygame.Color("green"),
                         (j * self.cell_size, i * self.cell_size, self.cell_size, self.cell_size),
                     )
 
