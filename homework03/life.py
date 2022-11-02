@@ -10,10 +10,10 @@ Grid = tp.List[Cells]
 
 class GameOfLife:
     def __init__(
-            self,
-            size: tp.Tuple[int, int],
-            randomize: bool = True,
-            max_generations: tp.Optional[float] = float("inf"),
+        self,
+        size: tp.Tuple[int, int],
+        randomize: bool = True,
+        max_generations: tp.Optional[float] = float("inf"),
     ) -> None:
         # Размер клеточного поля
         self.rows, self.cols = size
@@ -44,7 +44,7 @@ class GameOfLife:
             (row + 1, col),
             (row + 1, col - 1),
             (row, col - 1),
-            (row - 1, col - 1)
+            (row - 1, col - 1),
         }
         if row == 0:
             np -= {(row - 1, col)}
@@ -62,9 +62,7 @@ class GameOfLife:
             np -= {(row, col + 1)}
             np -= {(row + 1, col + 1)}
             np -= {(row - 1, col + 1)}
-        neighbours = [
-            self.curr_generation[i[0]][i[1]] for i in np
-        ]
+        neighbours = [self.curr_generation[i[0]][i[1]] for i in np]
         return neighbours
 
     def get_next_generation(self) -> Grid:
@@ -138,9 +136,7 @@ class GameOfLife:
         else:
             self.curr_generation[y][x] = 1
     def run_one_step(self):
-        if self.is_changing \
-                and not self.is_max_generations_exceeded\
-                and not self.is_on_pause:
+        if self.is_changing and not self.is_max_generations_exceeded and not self.is_on_pause:
             self.step()
 
 

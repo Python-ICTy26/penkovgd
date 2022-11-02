@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc5851de-b514-4e3c-9c07-de546559a9b5" name="Changes" comment="tester upd" />
+    <list default="true" id="bc5851de-b514-4e3c-9c07-de546559a9b5" name="Changes" comment="isort">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework03/life.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework03/life.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework03/life_console.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework03/life_console.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework03/life_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework03/life_gui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework03/life_proto.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework03/life_proto.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -614,7 +620,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667393602924</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="tester upd">
+      <created>1667393721782</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1667393721782</updated>
+    </task>
+    <task id="LOCAL-00040" summary="isort">
+      <created>1667393871876</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1667393871876</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,7 +657,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="решена лр-0" />
     <MESSAGE value="mypy problem" />
-    <MESSAGE value="isort" />
     <MESSAGE value="black2" />
     <MESSAGE value="black3" />
     <MESSAGE value="полировка" />
@@ -660,7 +679,8 @@
     <MESSAGE value="idea upd" />
     <MESSAGE value="upd" />
     <MESSAGE value="tester upd" />
-    <option name="LAST_COMMIT_MESSAGE" value="tester upd" />
+    <MESSAGE value="isort" />
+    <option name="LAST_COMMIT_MESSAGE" value="isort" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

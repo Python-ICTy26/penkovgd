@@ -25,11 +25,15 @@ class GUI(UI):
             for j in range(self.life.cols):
                 if self.life.curr_generation[i][j] == 0:
                     pygame.draw.rect(
-                        self.screen, pygame.Color('white'), (j * self.cell_size, i * self.cell_size, self.cell_size, self.cell_size)
+                        self.screen,
+                        pygame.Color('white'),
+                        (j * self.cell_size, i * self.cell_size, self.cell_size, self.cell_size),
                     )
                 else:
                     pygame.draw.rect(
-                        self.screen, pygame.Color('black'), (j * self.cell_size, i * self.cell_size, self.cell_size, self.cell_size)
+                        self.screen,
+                        pygame.Color('black'),
+                        (j * self.cell_size, i * self.cell_size, self.cell_size, self.cell_size),
                     )
 
     def run(self) -> None:

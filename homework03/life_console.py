@@ -9,12 +9,12 @@ class Console(UI):
         super().__init__(life)
 
     def draw_borders(self, screen) -> None:
-        """ Отобразить рамку. """
+        """Отобразить рамку."""
         screen.resize(self.life.rows + 2, self.life.cols + 2)
         screen.border()
 
     def draw_grid(self, screen) -> None:
-        """ Отобразить состояние клеток. """
+        """Отобразить состояние клеток."""
         for y in range(self.life.rows):
             for x in range(self.life.cols):
                 if self.life.curr_generation[y][x] == 1:
