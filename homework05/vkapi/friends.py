@@ -16,7 +16,10 @@ class FriendsResponse:
 
 
 def get_friends(
-    user_id: int, count: int = 5000, offset: int = 0, fields: tp.Optional[tp.List[str]] = None
+        user_id: int,
+        count: int = 5000,
+        offset: int = 0,
+        fields: tp.Optional[tp.List[str]] = None
 ) -> FriendsResponse:
     """
     Получить список идентификаторов друзей пользователя или расширенную информацию
@@ -28,7 +31,18 @@ def get_friends(
     :param fields: Список полей, которые нужно получить для каждого пользователя.
     :return: Список идентификаторов друзей пользователя или список пользователей.
     """
-    pass
+    params = {
+        "access_token": config.VK_CONFIG["access_token"],
+        "user_id": user_id,
+        "fields": ",".join(fields) if fields is not None else "",
+        "v": config.VK_CONFIG["version"],
+        "count": count,
+        "offset": offset,
+    }
+    url = "friends.get"
+    response = session.get(url, params=params).json()["response"]
+    friends = FriendsResponse(count=response["count"], items=response["items"])
+    return friends
 
 
 class MutualFriends(tp.TypedDict):
@@ -38,13 +52,13 @@ class MutualFriends(tp.TypedDict):
 
 
 def get_mutual(
-    source_uid: tp.Optional[int] = None,
-    target_uid: tp.Optional[int] = None,
-    target_uids: tp.Optional[tp.List[int]] = None,
-    order: str = "",
-    count: tp.Optional[int] = None,
-    offset: int = 0,
-    progress=None,
+        source_uid: tp.Optional[int] = None,
+        target_uid: tp.Optional[int] = None,
+        target_uids: tp.Optional[tp.List[int]] = None,
+        order: str = "",
+        count: tp.Optional[int] = None,
+        offset: int = 0,
+        progress=None,
 ) -> tp.Union[tp.List[int], tp.List[MutualFriends]]:
     """
     Получить список идентификаторов общих друзей между парой пользователей.
