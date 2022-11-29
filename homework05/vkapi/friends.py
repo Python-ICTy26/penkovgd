@@ -2,6 +2,7 @@ import dataclasses
 import math
 import time
 import typing as tp
+from tqdm import tqdm
 
 from vkapi import config, session
 from vkapi.exceptions import APIError
@@ -39,8 +40,12 @@ def get_friends(
         "count": count,
         "offset": offset,
     }
-    url = "friends.get"
-    response = session.get(url, params=params).json()["response"]
+    method = "friends.get"
+    response = session.get(method, params=params)
+    if "error" in response or not response.ok:
+        raise APIError(response["error"]["error_msg"])
+    else:
+        response = response.json()["response"]
     friends = FriendsResponse(count=response["count"], items=response["items"])
     return friends
 
@@ -71,4 +76,46 @@ def get_mutual(
     :param offset: Смещение, необходимое для выборки определенного подмножества общих друзей.
     :param progress: Callback для отображения прогресса.
     """
-    pass
+
+    progress = tqdm
+    method = "friends.getMutual"
+    if target_uid is not None:
+        params = {
+            "access_token": config.VK_CONFIG["access_token"],
+            "source_uid": source_uid,
+            "target_uid": target_uid,
+            "order": order,
+            "count": count,
+            "offset": offset,
+            "v": config.VK_CONFIG["version"],
+        }
+        response = session.get(method, params=params)
+        if "error" in response or not response.ok:
+            raise APIError(response["error"]["error_msg"])
+        response = response.json()["response"]
+        return response
+
+    requests_qty = math.ceil(len(target_uids) / 100)
+    list_of_mutual_friends = []
+    for request_num in progress(range(requests_qty)):
+        if request_num % 3 == 0 and request_num != 0:
+            time.sleep(1)
+        params = {
+            "access_token": config.VK_CONFIG["access_token"],
+            "target_uids": ",".join([str(i) for i in target_uids]),
+            "order": order,
+            "count": count if count is not None else "",
+            "offset": offset + request_num * 100,
+            "v": config.VK_CONFIG["version"],
+        }
+        response = session.get(method, params=params)
+        if "error" in response or not response.ok:
+            raise APIError(response["error"]["error_msg"])
+        for friend in response.json()["response"]:
+            mutual_friends = MutualFriends(
+                id=friend["id"],
+                common_friends=friend["common_friends"],
+                common_count=friend["common_count"]
+            )
+            list_of_mutual_friends.append(mutual_friends)
+    return list_of_mutual_friends
