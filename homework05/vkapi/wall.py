@@ -99,7 +99,14 @@ def get_wall_execute(
                 response,
                 json_normalize(
                     get_posts_2500(
-                        owner_id, domain, offset, count, max_count, filter, extended, fields
+                        owner_id,
+                        domain,
+                        offset,
+                        count,
+                        max_count,
+                        filter,
+                        extended,
+                        fields,
                     )
                 ),
             ]
