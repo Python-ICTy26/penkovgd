@@ -60,4 +60,6 @@ class Session(requests.Session):
         return super().get(query, *args, **kwargs)
 
     def post(self, url: str, *args: tp.Any, **kwargs: tp.Any) -> requests.Response:
-        pass
+        query = f"{self.base_url}/{url}"
+        return super().post(query, *args, **kwargs)
+
