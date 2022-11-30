@@ -14,9 +14,10 @@ def age_predict(user_id: int) -> tp.Optional[float]:
     :param user_id: Идентификатор пользователя.
     :return: Медианный возраст пользователя.
     """
-    data = get_friends(user_id, fields=["bdate"])
+    data = get_friends(user_id, fields=["bdate"]).items
+    data = tp.cast(tp.List[tp.Dict[str, tp.Any]], data)
     ages = []
-    for friend in data.items:
+    for friend in data:
         try:
             day, month, year = [int(i) for i in friend["bdate"].split(".")]
             bdate = dt.date(year, month, day)

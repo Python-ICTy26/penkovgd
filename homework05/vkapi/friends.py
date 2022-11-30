@@ -17,7 +17,7 @@ class FriendsResponse:
 
 
 def get_friends(
-    user_id: int,
+    user_id: tp.Optional[int] = None,
     count: int = 5000,
     offset: int = 0,
     fields: tp.Optional[tp.List[str]] = None,
@@ -34,7 +34,7 @@ def get_friends(
     """
     params = {
         "access_token": config.VK_CONFIG["access_token"],
-        "user_id": user_id,
+        "user_id": user_id if user_id is not None else "",
         "fields": ",".join(fields) if fields is not None else "",
         "v": config.VK_CONFIG["version"],
         "count": count,
@@ -42,11 +42,11 @@ def get_friends(
     }
     method = "friends.get"
     response = session.get(method, params=params)
-    if "error" in response or not response.ok:
-        raise APIError(response["error"]["error_msg"])
-    else:
-        response = response.json()["response"]
-    friends = FriendsResponse(count=response["count"], items=response["items"])
+    response_json = response.json()
+    if "error" in response_json or not response.ok:
+        raise APIError(response_json["error"]["error_msg"])
+    response_json = response_json["response"]
+    friends = FriendsResponse(count=response_json["count"], items=response_json["items"])
     return friends
 
 
@@ -90,32 +90,35 @@ def get_mutual(
             "v": config.VK_CONFIG["version"],
         }
         response = session.get(method, params=params)
-        if "error" in response or not response.ok:
-            raise APIError(response["error"]["error_msg"])
-        response = response.json()["response"]
-        return response
-
-    requests_qty = math.ceil(len(target_uids) / 100)
-    list_of_mutual_friends = []
-    for request_num in progress(range(requests_qty)):
-        if request_num % 3 == 0 and request_num != 0:
-            time.sleep(1)
-        params = {
-            "access_token": config.VK_CONFIG["access_token"],
-            "target_uids": ",".join([str(i) for i in target_uids]),
-            "order": order,
-            "count": count if count is not None else "",
-            "offset": offset + request_num * 100,
-            "v": config.VK_CONFIG["version"],
-        }
-        response = session.get(method, params=params)
-        if "error" in response or not response.ok:
-            raise APIError(response["error"]["error_msg"])
-        for friend in response.json()["response"]:
-            mutual_friends = MutualFriends(
-                id=friend["id"],
-                common_friends=friend["common_friends"],
-                common_count=friend["common_count"],
-            )
-            list_of_mutual_friends.append(mutual_friends)
-    return list_of_mutual_friends
+        response_json = response.json()
+        if "error" in response_json or not response.ok:
+            raise APIError(response_json["error"]["error_msg"])
+        response_json = response_json["response"]
+        return response_json
+    else:
+        target_uids_list = tp.cast(tp.List, target_uids)
+        requests_qty = math.ceil(len(target_uids_list) / 100)
+        list_of_mutual_friends = []
+        for request_num in progress(range(requests_qty)):
+            if request_num % 3 == 0 and request_num != 0:
+                time.sleep(1)
+            params = {
+                "access_token": config.VK_CONFIG["access_token"],
+                "target_uids": ",".join([str(i) for i in target_uids_list]),
+                "order": order,
+                "count": count if count is not None else "",
+                "offset": offset + request_num * 100,
+                "v": config.VK_CONFIG["version"],
+            }
+            response = session.get(method, params=params)
+            response_json = response.json()
+            if "error" in response_json or not response.ok:
+                raise APIError(response_json["error"]["error_msg"])
+            for friend in response_json["response"]:
+                mutual_friends = MutualFriends(
+                    id=friend["id"],
+                    common_friends=friend["common_friends"],
+                    common_count=friend["common_count"],
+                )
+                list_of_mutual_friends.append(mutual_friends)
+        return list_of_mutual_friends
