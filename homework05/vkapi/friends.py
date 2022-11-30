@@ -4,6 +4,7 @@ import time
 import typing as tp
 
 from tqdm import tqdm
+
 from vkapi import config, session
 from vkapi.exceptions import APIError
 
