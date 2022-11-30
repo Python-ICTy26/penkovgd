@@ -29,4 +29,5 @@ def age_predict(user_id: int) -> tp.Optional[float]:
     else:
         return None
 
+
 # print(age_predict(364603977))

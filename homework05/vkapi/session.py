@@ -34,11 +34,11 @@ class Session(requests.Session):
     backoff_factor: float
 
     def __init__(
-            self,
-            base_url: str,
-            timeout: float = 5.0,
-            max_retries: int = 3,
-            backoff_factor: float = 0.3,
+        self,
+        base_url: str,
+        timeout: float = 5.0,
+        max_retries: int = 3,
+        backoff_factor: float = 0.3,
     ) -> None:
         super().__init__()
         self.base_url = base_url
@@ -50,7 +50,7 @@ class Session(requests.Session):
             total=self.max_retries,
             backoff_factor=self.backoff_factor,
             status_forcelist=[429, 500, 502, 503, 504],
-            allowed_methods=["HEAD", "GET", "OPTIONS"]
+            allowed_methods=["HEAD", "GET", "OPTIONS"],
         )
         adapter = TimeoutHTTPAdapter(timeout=self.timeout, max_retries=retry_strategy)
         self.mount("https://", adapter)
@@ -62,4 +62,3 @@ class Session(requests.Session):
     def post(self, url: str, *args: tp.Any, **kwargs: tp.Any) -> requests.Response:
         query = f"{self.base_url}/{url}"
         return super().post(query, *args, **kwargs)
-

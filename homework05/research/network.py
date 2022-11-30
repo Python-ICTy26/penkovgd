@@ -20,7 +20,9 @@ def ego_network(
     """
     graph = []
     if friends is None:
-        friends_response: tp.List[tp.Dict[str, tp.Any]] = get_friends(user_id, fields=["nickname"]).items
+        friends_response: tp.List[tp.Dict[str, tp.Any]] = get_friends(
+            user_id, fields=["nickname"]
+        ).items
         friends = [user["id"] for user in friends_response if not user.get("deactivated")]
     mutual_users = get_mutual(source_uid=user_id, target_uids=friends)
     for user in mutual_users:
@@ -29,6 +31,7 @@ def ego_network(
             graph.append(link)
     return graph
 
+
 def plot_ego_network(net: tp.List[tp.Tuple[int, int]]) -> None:
     graph = nx.Graph()
     graph.add_edges_from(net)
@@ -36,6 +39,7 @@ def plot_ego_network(net: tp.List[tp.Tuple[int, int]]) -> None:
     nx.draw(graph, layout, node_size=10, node_color="black", alpha=0.5)
     plt.title("Ego Network", size=15)
     plt.show()
+
 
 def plot_communities(net: tp.List[tp.Tuple[int, int]]) -> None:
     graph = nx.Graph()

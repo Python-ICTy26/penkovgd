@@ -12,14 +12,14 @@ from vkapi.exceptions import APIError
 
 
 def get_posts_2500(
-        owner_id: str = "",
-        domain: str = "",
-        offset: int = 0,
-        count: int = 10,
-        max_count: int = 2500,
-        filter: str = "owner",
-        extended: int = 0,
-        fields: tp.Optional[tp.List[str]] = None,
+    owner_id: str = "",
+    domain: str = "",
+    offset: int = 0,
+    count: int = 10,
+    max_count: int = 2500,
+    filter: str = "owner",
+    extended: int = 0,
+    fields: tp.Optional[tp.List[str]] = None,
 ) -> tp.Dict[str, tp.Any]:
 
     script = f"""
@@ -55,7 +55,6 @@ def get_posts_2500(
         "code": script,
         "access_token": config.VK_CONFIG["access_token"],
         "v": config.VK_CONFIG["version"],
-
     }
 
     response = session.post("execute", data=params)
@@ -66,15 +65,15 @@ def get_posts_2500(
 
 
 def get_wall_execute(
-        owner_id: str = "",
-        domain: str = "",
-        offset: int = 0,
-        count: int = 10,
-        max_count: int = 2500,
-        filter: str = "owner",
-        extended: int = 0,
-        fields: tp.Optional[tp.List[str]] = None,
-        progress=None,
+    owner_id: str = "",
+    domain: str = "",
+    offset: int = 0,
+    count: int = 10,
+    max_count: int = 2500,
+    filter: str = "owner",
+    extended: int = 0,
+    fields: tp.Optional[tp.List[str]] = None,
+    progress=None,
 ) -> pd.DataFrame:
     """
     Возвращает список записей со стены пользователя или сообщества.
@@ -95,10 +94,15 @@ def get_wall_execute(
         progress = lambda x: x
     response = pd.DataFrame()
     for _ in progress(range(math.ceil(count / 2500))):
-        response = pd.concat([response,
-            json_normalize(
-                get_posts_2500(owner_id, domain, offset, count, max_count, filter, extended, fields)
-            )]
+        response = pd.concat(
+            [
+                response,
+                json_normalize(
+                    get_posts_2500(
+                        owner_id, domain, offset, count, max_count, filter, extended, fields
+                    )
+                ),
+            ]
         )
         time.sleep(1)
     return response
