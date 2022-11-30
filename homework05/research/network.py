@@ -22,9 +22,7 @@ def ego_network(
         friends_response: tp.List[tp.Dict[str, tp.Any]] = get_friends(
             user_id, fields=["nickname"]
         ).items
-        friends = [
-            user["id"] for user in friends_response if not user.get("deactivated")
-        ]
+        friends = [user["id"] for user in friends_response if not user.get("deactivated")]
     mutual_users = get_mutual(source_uid=user_id, target_uids=friends)
     for user in mutual_users:
         for common_friend in user["common_friends"]:
