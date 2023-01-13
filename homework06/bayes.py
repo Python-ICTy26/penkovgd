@@ -1,4 +1,5 @@
 from math import log
+
 # import csv
 #
 # with open("data/SMSSpamCollection", encoding="utf-8") as f:
