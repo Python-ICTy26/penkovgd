@@ -1,0 +1,5 @@
+Bottle
+bayes
+SQLAlchemy
+bs4
+requests
