@@ -7,7 +7,6 @@ from math import log
 
 
 class NaiveBayesClassifier:
-
     def __init__(self, alpha=0.05):
         self.alpha = alpha
         self.word_qty_in_classes = {}
@@ -16,7 +15,7 @@ class NaiveBayesClassifier:
         self.prior_prob_of_classes = {}
 
     def fit(self, X, y):
-        """ Fit Naive Bayes classifier according to X, y. """
+        """Fit Naive Bayes classifier according to X, y."""
         self.word_qty_in_classes = {c: 0 for c in y}
         for msg, class_ in zip(X, y):
             for word in msg.split():
@@ -30,25 +29,28 @@ class NaiveBayesClassifier:
         for word, classes_count in self.words_in_classes.items():
             for class_, count in classes_count.items():
                 self.word_probabilities[word][class_] = (count + self.alpha) / (
-                        self.word_qty_in_classes[class_] + self.alpha * d)
+                    self.word_qty_in_classes[class_] + self.alpha * d
+                )
 
         self.prior_prob_of_classes = {class_: (y.count(class_) / len(y)) for class_ in y}
 
     def predict(self, X):
-        """ Perform classification on an array of test vectors X. """
+        """Perform classification on an array of test vectors X."""
         prediction = {}
         for msg in X:
             prob_class = {}
             for class_ in self.prior_prob_of_classes.keys():
                 prob = log(self.prior_prob_of_classes[class_]) + sum(
-                    log(self.word_probabilities[word][class_]) for word in msg.split() if
-                        word in self.word_probabilities)
+                    log(self.word_probabilities[word][class_])
+                    for word in msg.split()
+                    if word in self.word_probabilities
+                )
                 prob_class[class_] = prob
             prediction[msg] = max(prob_class, key=prob_class.get)
         return prediction
 
     def score(self, X_test, y_test):
-        """ Returns the mean accuracy on the given test data and labels. """
+        """Returns the mean accuracy on the given test data and labels."""
         predictions = self.predict(X_test)
         score = 0
         for i, class_ in enumerate(predictions.values()):

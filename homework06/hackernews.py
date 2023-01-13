@@ -9,7 +9,7 @@ from scraputils import get_news
 def news_list():
     s = session()
     rows = s.query(News).filter(News.label == None).all()
-    return template('news_template', rows=rows)
+    return template("news_template", rows=rows)
 
 
 @route("/add_label/")
@@ -28,14 +28,21 @@ def update_news():
     news = get_news("https://news.ycombinator.com/newest")
     s = session()
     for new in news:
-        if len(s.query(News).filter(News.author == new["author"], News.title == new["title"]).all()) == 0:
-            s.add(News(
-                title=new["title"],
-                author=new["author"],
-                url=new["url"],
-                comments=new["comments"],
-                points=new["score"],
-            ))
+        if (
+            len(
+                s.query(News).filter(News.author == new["author"], News.title == new["title"]).all()
+            )
+            == 0
+        ):
+            s.add(
+                News(
+                    title=new["title"],
+                    author=new["author"],
+                    url=new["url"],
+                    comments=new["comments"],
+                    points=new["score"],
+                )
+            )
     s.commit()
     redirect("/news")
 
@@ -61,7 +68,7 @@ def classify_news():
     for title, label in predictions.items():
         if label == "never":
             rows.append(s.query(News).filter(News.title == title).first())
-    return template('news_template', rows=rows)
+    return template("news_template", rows=rows)
 
 
 if __name__ == "__main__":
